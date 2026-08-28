@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeira Aula de JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f4f4f9;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #imagem{
+            height: 264px;
+            width: 232px;
+        }
+        #mensagem {
+            font-size: 20px;
+            margin-top: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Atividade Avatar</h1>
+    <p>Clique no botão abaixo ou clique K no teclado, por favor apenas uma vez...</p>
+
+    <!-- Botão que disparará a ação -->
+    <button id="meuBotao">Clique Aqui</button>
+
+    <!-- Elemento que terá o texto alterado pelo JavaScript -->
+    <p id="mensagem">Aguardando ação...</p>
+
+    <!-- Código JavaScript -->
+    <script>
+        // 1. Documentação: Seleção de elementos do HTML pelo ID
+        const botao = document.getElementById('meuBotao');
+        const mensagem = document.getElementById('mensagem');
+        let botaoaper = false;
+        let vezes = 0;
+        let vezesA = 0;
+
+
+        // 2. Documentação: Adição de um escutador de eventos (Event Listener)
+        // Quando o botão for clicado, a função será executada.
+        
+
+        document.addEventListener('keydown', function(event){
+            if(event.key === "k"){
+                if(vezes==0 && vezesA==0){
+                    mensagem.innerText = "Tecla K foi clicada";
+                const minhaImagem = document.createElement("img");
+                minhaImagem.src = "https://raw.githubusercontent.com/edu-rodrigues5/Atividade/refs/heads/main/avatar.jpg?token=GHSAT0AAAAAAEGUV5PRX36EXT4NYI5QL2V22UQ4HTQ";
+                minhaImagem.id = "imagem";
+                document.body.append(minhaImagem);
+                
+                }
+                vezes++;
+
+                switch (vezes) {
+                    case 1:
+                        mensagem.innerText = "Tecla K foi clicada";
+                        break;
+                    case 2:
+                        mensagem.innerText = "Tecla K já foi clicada";
+                        break;
+                    case 3:
+                        mensagem.innerText = "Preciso avisar de novo?";
+                        break;
+                    case 4:
+                        mensagem.innerText = "Por que você só não atualiza a página e aperta K de novo então?";
+                        break;
+                    case 5:
+                        mensagem.innerText = "Você não tem mais nada pra fazer além de apertar K?";
+                        break;
+                    case 6:
+                        mensagem.innerText = "Eu me demito...";
+                        break;
+                    case 7:
+                        mensagem.innerText = "...";
+                        break;
+                    default:
+                        mensagem.innerText = "...";
+                        break;
+                }
+    
+            }
+        });
+
+
+        botao.addEventListener('click', function() {
+            // Altera o texto do elemento HTML
+
+            if(vezes==0 && vezesA==0)
+            {
+            const minhaImagem = document.createElement("img");
+            minhaImagem.src = "https://raw.githubusercontent.com/edu-rodrigues5/Atividade/refs/heads/main/avatar.jpg?token=GHSAT0AAAAAAEGUV5PRX36EXT4NYI5QL2V22UQ4HTQ";
+            minhaImagem.id = "imagem";
+            document.body.append(minhaImagem);
+            }
+            vezesA++;
+
+                switch (vezesA) {
+                    case 1:
+                        mensagem.innerText = "Botão foi clicada";
+                        break;
+                    case 2:
+                        mensagem.innerText = "Botão já foi clicada";
+                        break;
+                    case 3:
+                        mensagem.innerText = "Preciso avisar de novo?";
+                        break;
+                    case 4:
+                        mensagem.innerText = "Por que você só não atualiza a página e aperta o Botão de novo então?";
+                        break;
+                    case 5:
+                        mensagem.innerText = "Você não tem mais nada pra fazer além de apertar o Botão?";
+                        break;
+                    case 6:
+                        mensagem.innerText = "Eu me demito...";
+                        break;
+                    case 7:
+                        mensagem.innerText = "...";
+                        break;
+                    default:
+                        mensagem.innerText = "Ainda não apertou";
+                        break;
+                }
+        });
+    </script>
+</body>
+</html>

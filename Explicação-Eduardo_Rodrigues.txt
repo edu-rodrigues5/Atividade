@@ -1,0 +1,5 @@
+a solução que está sendo usada é click, então no botão é adicionado o evento click que altera a mensagem.
+
+Na minha, mudei a interação com o click, quanto mais o usuário clicar no botão a mensagem muda, e além disso usei outra solução que permite engatilhar quando o usuário clica a tecla "k" no site. Desta forma a imagem aparece também e quanto mais você clicar mais a mensagem muda.
+
+A foto foi posta no repositório do github.
